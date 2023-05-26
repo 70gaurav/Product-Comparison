@@ -17,7 +17,7 @@ function Singleproduct() {
         <li><h3>Screen:{singleproduct.screen}</h3></li>
         <li><h3>Cost:<span>{singleproduct.cost}$</span></h3></li>
         <li><h3>Storage:{singleproduct.storage}</h3></li>
-        <li><h3>Os:{singleproduct.os}</h3></li>
+        <li><h3>OS:{singleproduct.os}</h3></li>
        </ul>
       </div>
     </div>
