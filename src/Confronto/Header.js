@@ -1,10 +1,15 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { productcontext } from './App'
+import { useSelector } from 'react-redux'
+
 
 
 function Header() {
-  const {compare} = useContext(productcontext)
+
+const length = useSelector((state) => {
+  return state.compare.comparison.length
+})
+  
   return (
     <header>
         <div className='upper'>
@@ -13,7 +18,7 @@ function Header() {
         <div className='line'></div>
         <div className='lower'>
           <h2><Link to="/">Catalog</Link></h2>
-          <h2><Link to="/Compare">Compare ({compare.length})</Link></h2>
+          <h2><Link to="/Compare">Compare ({length})</Link></h2>
 
 
         </div>

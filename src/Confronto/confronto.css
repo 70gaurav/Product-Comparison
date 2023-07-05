@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
 }
 
 header a {
@@ -93,6 +94,7 @@ header h2 {
     display: flex;
     flex-direction: column;
     width: 20%;
+    text-align: left;
 }
 
 .item h4 {
@@ -104,7 +106,10 @@ header h2 {
 .item li {
     list-style: none;
     margin-left: 30px;
-    margin: 0.5rem 0;
+    margin: 0.5rem 0 0.5rem 1rem;
+}
+.item a{
+    text-align: center;
 }
 
 

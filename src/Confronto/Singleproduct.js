@@ -1,23 +1,27 @@
-import React, { useContext } from 'react'
-import { productcontext } from './App'
+import React from 'react'
+import { useDispatch , useSelector } from 'react-redux'
 
 function Singleproduct() {
-  const { singleproduct } = useContext(productcontext)
+
+  const singleProduct = useSelector((state) => {
+    return state.compare.singleProduct
+  })
+ 
   return (
     <div className='singleproduct'>
       <div className='singleimage'>
-        <img src={singleproduct.image}></img>
+        <img src={singleProduct.image}></img>
       </div>
       <div className='details'>
-        <h1>Brand:{singleproduct.brand}</h1>
+        <h1>Brand:{singleProduct.brand}</h1>
        <ul>
-        <li><h3>Model:{singleproduct.model}</h3></li>
-        <li><h3>Rear camera:{singleproduct.rear_camera}</h3></li>
-        <li><h3>Front camera:{singleproduct.front_camera}</h3></li>
-        <li><h3>Screen:{singleproduct.screen}</h3></li>
-        <li><h3>Cost:<span>{singleproduct.cost}$</span></h3></li>
-        <li><h3>Storage:{singleproduct.storage}</h3></li>
-        <li><h3>OS:{singleproduct.os}</h3></li>
+        <li><h3>Model:{singleProduct.model}</h3></li>
+        <li><h3>Rear camera:{singleProduct.rear_camera}</h3></li>
+        <li><h3>Front camera:{singleProduct.front_camera}</h3></li>
+        <li><h3>Screen:{singleProduct.screen}</h3></li>
+        <li><h3>Cost:<span>{singleProduct.cost}$</span></h3></li>
+        <li><h3>Storage:{singleProduct.storage}</h3></li>
+        <li><h3>OS:{singleProduct.os}</h3></li>
        </ul>
       </div>
     </div>
