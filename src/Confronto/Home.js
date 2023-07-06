@@ -15,14 +15,17 @@ function Home() {
     return state.compare;
   });
 
-  const handleCompareClick = (event, element) => {
-    event.preventDefault();
-   ;
-  };
+  const loading = useSelector((state) => {
+    return state.compare.isLoading
+  })
 
   return (
     <div className="mobile">
-      {compareData.products.map((element) => {
+      {loading ?<div>
+         <div class="center-body">
+        <div class="loader-circle-75"></div>
+      </div>
+      </div> : compareData.products.map((element) => {
         const isAddedToCompare = compareData.comparison.some((product) => product.id === element.id);
 
         return (
@@ -35,7 +38,7 @@ function Home() {
             {isAddedToCompare ? (
               <Link className="compare">ADDED TO COMPARE</Link>
             ) : (
-              <Link className="compare" onClick={() =>  dispatch(compareHandler(element))}>ADD TO COMPARE</Link>
+              <Link className="compare" onClick={() => dispatch(compareHandler(element))}>ADD TO COMPARE</Link>
             )}
           </div>
         );

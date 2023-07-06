@@ -31,7 +31,7 @@ export const compareSlice = createSlice({
     },
     productDeleteHandler: (state, action) => {
       state.comparison = state.comparison.filter(
-        (_, index) => index !== action.payload
+        (element, index) => index !== action.payload
       );
     },
   },
@@ -40,14 +40,12 @@ export const compareSlice = createSlice({
       state.isLoading = true;
     },
     [data.fulfilled]: (state, action) => {
+      state.isLoading = false;
       state.products = action.payload;
     },
   },
 });
 
 export const {
-  compareHandler,
-  singleProductHandler,
-  productDeleteHandler,
-} = compareSlice.actions;
+  compareHandler, singleProductHandler, productDeleteHandler } = compareSlice.actions;
 export default compareSlice.reducer;
